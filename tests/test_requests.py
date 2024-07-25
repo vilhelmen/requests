@@ -719,6 +719,7 @@ class TestRequests:
 
         # Verify auth header overrides provided headers
         #  (not strictly a feature, but it's current behavior)
+
         second_header_value = "NOT_RETURNED"
         r = requests.get(url, headers={header_key: second_header_value}, auth=auth)
         assert r.json()["headers"][header_key] == header_value
